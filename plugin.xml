@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.wizital.plugins.backgroundlocationenabler"
-    version="1.0.2">
+    version="1.0.3">
 
     <name>BackgroundLocationEnabler</name>
     <description>A simple Phonegap Plugin to enable background location update on iOS.</description>
@@ -10,6 +10,12 @@
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>    
+
+    <js-module src="www/backgroundLocationEnabler.js" name="backgroundlocationenabler">
+            <clobbers target="window.BackgroundLocationEnabler" />
+    </js-module>
+
+    <dependency id="org.apache.cordova.geolocation" url="https://github.com/apache/cordova-plugin-geolocation" />
     
     <!-- ios -->
     <platform name="ios">
@@ -19,9 +25,19 @@
                 <string>location</string>
             </array>
         </config-file>
-
+                
         
     </platform>
+
+    <config-file target="config.xml" parent="/*">
+        <feature name="BackgroundLocationEnabler">
+            <param name="ios-package" value="CDVBackgroundLocationEnabler" />
+        </feature>
+        
+    </config-file>
+        
+    <header-file src="src/ios/CDVBackgroundLocationEnabler.h" />
+    <source-file src="src/ios/CDVBackgroundLocationEnabler.m" />
 
     
     
