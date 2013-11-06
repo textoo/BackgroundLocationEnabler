@@ -26,18 +26,18 @@
             </array>
         </config-file>
                 
+        <config-file target="config.xml" parent="/*">
+            <feature name="BackgroundLocationEnabler">
+                <param name="ios-package" value="CDVBackgroundLocationEnabler" />
+            </feature>
         
+        </config-file>
+        
+        <header-file src="src/ios/CDVBackgroundLocationEnabler.h" />
+        <source-file src="src/ios/CDVBackgroundLocationEnabler.m" />    
     </platform>
 
-    <config-file target="config.xml" parent="/*">
-        <feature name="BackgroundLocationEnabler">
-            <param name="ios-package" value="CDVBackgroundLocationEnabler" />
-        </feature>
-        
-    </config-file>
-        
-    <header-file src="src/ios/CDVBackgroundLocationEnabler.h" />
-    <source-file src="src/ios/CDVBackgroundLocationEnabler.m" />
+    
 
     
     
