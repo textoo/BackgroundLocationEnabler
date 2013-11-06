@@ -2,6 +2,7 @@ BackgroundLocationEnabler
 =========================
 
 A simple Phonegap Plugin to enable background location update on iOS
+
 Has to be used in conjunction with :
 
     geolocation.watchPosition()
@@ -10,6 +11,7 @@ Has to be used in conjunction with :
 Unlimited background location
 -------------------------
 If your device is not moving, iOS will suspend background location after 10 minutes.
+
 To go beyond this limit, use the following method :
 
     BackgroundLocationEnabler.enableUnlimited()
